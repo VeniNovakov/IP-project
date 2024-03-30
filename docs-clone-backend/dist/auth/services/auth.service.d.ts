@@ -1,4 +1,4 @@
-import { User } from 'src/typeorm/entities/user.entity';
+import { User } from 'src/users/entities/user.entity';
 import { CreateUserParams } from 'src/utils/types';
 import { Repository } from 'typeorm';
 import { JwtService } from '@nestjs/jwt';
@@ -14,7 +14,7 @@ export declare class AuthService {
             refresh_token: string;
         };
     }>;
-    tokens(user: any): Promise<{
+    tokens(user: User): Promise<{
         access_token: string;
         refresh_token: string;
     }>;

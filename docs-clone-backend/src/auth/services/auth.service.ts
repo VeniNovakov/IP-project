@@ -1,13 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User } from 'src/typeorm/entities/user.entity';
+import { User } from 'src/users/entities/user.entity';
 import { CreateUserParams } from 'src/utils/types';
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-import { CreateUserDto } from 'src/users/dtos/CreateUser.dto';
-import * as sha256 from 'fast-sha256';
-import { TokenConfig } from 'src/configs/auth.config';
+import { TokenConfig } from 'src/config/auth.config';
 @Injectable()
 export class AuthService {
   constructor(
@@ -29,6 +27,7 @@ export class AuthService {
         name: user.name,
         sub: user.id,
       };
+
       const tokens = await this.tokens(user);
 
       await this.updateToken(user.id, tokens.refresh_token);
@@ -41,11 +40,11 @@ export class AuthService {
     return null;
   }
 
-  async tokens(user) {
+  async tokens(user: User) {
     const payload = {
       name: user.name,
       sub: user.id,
-      products: user.productids,
+      documents: user.documents,
     };
     const accToken = await this.jwtService.signAsync(payload, {
       expiresIn: 60 * 30,

@@ -11,12 +11,13 @@ const common_1 = require("@nestjs/common");
 const users_controller_1 = require("./controllers/users/users.controller");
 const users_service_1 = require("./services/users/users.service");
 const typeorm_1 = require("@nestjs/typeorm");
-const user_entity_1 = require("../typeorm/entities/user.entity");
+const user_entity_1 = require("./entities/user.entity");
 const jwtAtAuth_guard_1 = require("../auth/guards/jwtAtAuth.guard");
 const jwtRtAuthGuard_guard_1 = require("../auth/guards/jwtRtAuthGuard.guard");
 let UsersModule = class UsersModule {
 };
-UsersModule = __decorate([
+exports.UsersModule = UsersModule;
+exports.UsersModule = UsersModule = __decorate([
     (0, common_1.Module)({
         imports: [typeorm_1.TypeOrmModule.forFeature([user_entity_1.User])],
         controllers: [users_controller_1.UsersController],
@@ -24,5 +25,4 @@ UsersModule = __decorate([
         exports: [typeorm_1.TypeOrmModule],
     })
 ], UsersModule);
-exports.UsersModule = UsersModule;
 //# sourceMappingURL=users.module.js.map

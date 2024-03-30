@@ -13,7 +13,7 @@ exports.StrategyJwtRT = void 0;
 const passport_jwt_1 = require("passport-jwt");
 const passport_1 = require("@nestjs/passport");
 const common_1 = require("@nestjs/common");
-const auth_config_1 = require("../../configs/auth.config");
+const auth_config_1 = require("../../config/auth.config");
 let StrategyJwtRT = class StrategyJwtRT extends (0, passport_1.PassportStrategy)(passport_jwt_1.Strategy, 'refresh-jwt') {
     constructor() {
         super({
@@ -29,9 +29,9 @@ let StrategyJwtRT = class StrategyJwtRT extends (0, passport_1.PassportStrategy)
         return Object.assign(Object.assign({}, payload), { token });
     }
 };
-StrategyJwtRT = __decorate([
+exports.StrategyJwtRT = StrategyJwtRT;
+exports.StrategyJwtRT = StrategyJwtRT = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [])
 ], StrategyJwtRT);
-exports.StrategyJwtRT = StrategyJwtRT;
 //# sourceMappingURL=jwtRt.strategy.js.map

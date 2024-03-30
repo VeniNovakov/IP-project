@@ -1,1 +1,0 @@
-{"version":3,"file":"typeorm.config.js","sourceRoot":"","sources":["../../src/configs/typeorm.config.ts"],"names":[],"mappings":";;;AACA,iEAAuD;AAE1C,QAAA,aAAa,GAAyB;IACjD,IAAI,EAAE,UAAU;IAChB,IAAI,EAAE,WAAW;IACjB,IAAI,EAAE,IAAI;IACV,QAAQ,EAAE,UAAU;IACpB,QAAQ,EAAE,oBAAoB;IAC9B,QAAQ,EAAE,SAAS;IACnB,QAAQ,EAAE,CAAC,kBAAI,CAAC;IAChB,WAAW,EAAE,IAAI;CAClB,CAAC"}

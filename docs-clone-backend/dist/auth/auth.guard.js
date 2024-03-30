@@ -13,8 +13,8 @@ let AuthGuard = class AuthGuard {
         return true;
     }
 };
-AuthGuard = __decorate([
+exports.AuthGuard = AuthGuard;
+exports.AuthGuard = AuthGuard = __decorate([
     (0, common_1.Injectable)()
 ], AuthGuard);
-exports.AuthGuard = AuthGuard;
 //# sourceMappingURL=auth.guard.js.map

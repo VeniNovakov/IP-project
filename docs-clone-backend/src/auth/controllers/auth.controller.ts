@@ -1,24 +1,17 @@
 import {
   Controller,
-  Request,
   Res,
   Post,
   UseGuards,
   Body,
-  Get,
   HttpStatus,
-  Session,
   Req,
 } from '@nestjs/common';
 import { AuthService } from '../services/auth.service';
 import { CreateUserDto } from 'src/users/dtos/CreateUser.dto';
-
 import * as dotenv from 'dotenv';
 import { join } from 'path';
-import { JwtRtAuthGuard } from '../guards/jwtRtAuthGuard.guard';
 import { AuthGuard } from '@nestjs/passport';
-import { JwtAtAuthGuard } from '../guards/jwtAtAuth.guard';
-import { JwtAtPayload } from 'src/utils/types';
 dotenv.config({ path: join(__dirname, '..', '/src', '/.env') });
 
 @Controller('auth')

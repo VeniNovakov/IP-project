@@ -2,31 +2,24 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { join } from 'path';
-import { User } from './typeorm/entities/user.entity';
-import { UsersModule } from './users/users.module';
-import { AuthModule } from './auth/auth.module';
 import { AuthController } from './auth/controllers/auth.controller';
-import { AuthService } from './auth/services/auth.service';
-import * as dotenv from 'dotenv';
 import { UsersController } from './users/controllers/users/users.controller';
+import { typeOrmAsyncConfig } from './config/typeorm.config';
+import { ConfigModule } from '@nestjs/config';
+import { AuthService } from './auth/services/auth.service';
+import { AuthModule } from './auth/auth.module';
 import { UsersService } from './users/services/users/users.service';
-dotenv.config({ path: join(__dirname, '..', '/src', '/.env') });
-console.log(process.env);
+import { DocumentsModule } from './documents/documents.module';
+import { PermissionModule } from './permissions/permission.module';
+import { UsersModule } from './users/users.module';
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: process.env.DATABASE_HOST as string,
-      port: process.env.DATABASE_PORT as unknown as number,
-      username: process.env.DATABASE_USERNAME,
-      password: process.env.DATABASE_PASSWORD as string,
-      database: process.env.DATABASE_NAME,
-      entities: [User],
-      synchronize: true,
-    }),
-    UsersModule,
+    ConfigModule.forRoot({ isGlobal: true }),
+    TypeOrmModule.forRootAsync(typeOrmAsyncConfig),
     AuthModule,
+    DocumentsModule,
+    PermissionModule,
+    UsersModule,
   ],
   controllers: [AppController, AuthController, UsersController],
   providers: [AppService, AuthService, UsersService],

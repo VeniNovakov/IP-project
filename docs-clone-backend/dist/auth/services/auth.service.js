@@ -15,11 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const user_entity_1 = require("../../typeorm/entities/user.entity");
+const user_entity_1 = require("../../users/entities/user.entity");
 const typeorm_2 = require("typeorm");
 const bcrypt = require("bcrypt");
 const jwt_1 = require("@nestjs/jwt");
-const auth_config_1 = require("../../configs/auth.config");
+const auth_config_1 = require("../../config/auth.config");
 let AuthService = class AuthService {
     constructor(userRepository, jwtService) {
         this.userRepository = userRepository;
@@ -50,7 +50,7 @@ let AuthService = class AuthService {
         const payload = {
             name: user.name,
             sub: user.id,
-            products: user.productids,
+            documents: user.documents,
         };
         const accToken = await this.jwtService.signAsync(payload, {
             expiresIn: 60 * 30,
@@ -100,11 +100,11 @@ let AuthService = class AuthService {
         return { code: 200 };
     }
 };
-AuthService = __decorate([
+exports.AuthService = AuthService;
+exports.AuthService = AuthService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(user_entity_1.User)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
         jwt_1.JwtService])
 ], AuthService);
-exports.AuthService = AuthService;
 //# sourceMappingURL=auth.service.js.map

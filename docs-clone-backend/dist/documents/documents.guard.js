@@ -13,8 +13,8 @@ let DocumentsGuard = class DocumentsGuard {
         return true;
     }
 };
-DocumentsGuard = __decorate([
+exports.DocumentsGuard = DocumentsGuard;
+exports.DocumentsGuard = DocumentsGuard = __decorate([
     (0, common_1.Injectable)()
 ], DocumentsGuard);
-exports.DocumentsGuard = DocumentsGuard;
 //# sourceMappingURL=documents.guard.js.map

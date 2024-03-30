@@ -1,3 +1,4 @@
+/// <reference types="cookie-parser" />
 import { Request } from 'express';
 import { JwtRtPayload } from 'src/utils/types';
 declare const StrategyJwtRT_base: new (...args: any[]) => any;
