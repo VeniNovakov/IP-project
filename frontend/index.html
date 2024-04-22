@@ -117,9 +117,9 @@
         </div>
     </div>
 
-    <div class="second_toolbar">
+    <div class="second_toolbar" style="background-color: lightgray;">
         <div class="dropdown">
-            <button class="dropbtn">Файл</button>
+            <button class="dropbtn">Менюта</button>
             <div class="dropdown-content">
                 <a href="#">Печат</a>
                 <a href="#">Печат</a>
@@ -132,7 +132,7 @@
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn">Редактиране</button>
+            <button class="dropbtn">Печат</button>
             <div class="dropdown-content">
                 <a href="#">Печат</a>
                 <a href="#">Печат</a>
@@ -158,59 +158,39 @@
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn">Вмъкване</button>
+            <input class="FontFamily" autocomplete="off" value="Arial" style="text-align:center;" type="text" aria-label="Шрифт">
             <div class="dropdown-content">
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
+                <a href="#" onclick="ChangeFontEvent('Arial')">Arial</a>
+                <a href="#" onclick="ChangeFontEvent('Times New Roman')">Times New Roman</a>
+                <a href="#" onclick="ChangeFontEvent('Verdana')">Verdana</a>
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn">Форматиране</button>
+            <input class="TextSize" autocomplete="off" value="12" style="text-align:center;" type="text" aria-label="Размер на шрифта">
             <div class="dropdown-content">
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
+                <a href="#" onclick="ChangeSizeEvent(8)">8</a>
+                <a href="#" onclick="ChangeSizeEvent(9)">9</a>
+                <a href="#" onclick="ChangeSizeEvent(10)">10</a>
+                <a href="#" onclick="ChangeSizeEvent(12)">12</a>
+                <a href="#" onclick="ChangeSizeEvent(14)">14</a>
+                <a href="#" onclick="ChangeSizeEvent(18)">18</a>
+                <a href="#" onclick="ChangeSizeEvent(24)">24</a>
+                <a href="#" onclick="ChangeSizeEvent(30)">30</a>
+            </div>
+        </div>
+        <button id="bold" style="border: none; background-color: lightgray" onclick="BoldTextEvent()"><strong>B</strong></button>
+        <button id="italic" style="border: none; background-color: lightgray" onclick="ItalicTextEvent()"><i>I</i></button>
+        <button id="underscore" style="border: none; background-color: lightgray" onclick="UnderscoreTextEvent()"><u>U</u></button>
+        <div class="dropdown">
+            <button class="dropbtn">Подравняване</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="ChangeAlignEvent('left')">Ляво</a>
+                <a href="#" onclick="ChangeAlignEvent('center')">Централно</a>
+                <a href="#" onclick="ChangeAlignEvent('right')">Дясно</a>
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn">Инструменти</button>
-            <div class="dropdown-content">
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Разширения</button>
-            <div class="dropdown-content">
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-                <a href="#">Печат</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Помощ</button>
+            <button class="dropbtn">Цветове</button>
             <div class="dropdown-content">
                 <a href="#">Печат</a>
                 <a href="#">Печат</a>
@@ -225,10 +205,7 @@
     </div>
 
     <div class="editor-container">
-      <textarea class="editor"></textarea>
-    </div>
-    <div class="preview-container">
-      <div class="preview"></div>
+      <textarea class="editor" style="font-size: 250%; height: 100%; width: 100%;"></textarea>
     </div>
   <script src="script.js"></script>
 </body>

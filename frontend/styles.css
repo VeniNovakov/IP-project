@@ -40,13 +40,14 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
+    width: 100%;
   }
   
 .dropbtn {
     background-color: #ffffff;
     color: black;
-    padding: 10px 15px;
     font-size: 14px;
+    width: 100%;
     border: none;
     cursor: pointer;
 }
@@ -92,5 +93,5 @@ body {
 }
 
 .second_toolbar .dropdown .dropbtn {
-    background-color: lightblue;
+    background-color: lightgray;
 }
